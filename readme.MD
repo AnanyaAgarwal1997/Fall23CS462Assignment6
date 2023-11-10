@@ -1,6 +1,6 @@
 ### Assignment 6: Markov Decision Processes and Reinforcement Learning
 
-#### Due Wed Nov 30, 11:59pm.
+#### Due Wed Nov 29, 11:59pm.
 
 ##### 100 points.
 
