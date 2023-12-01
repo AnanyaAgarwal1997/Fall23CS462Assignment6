@@ -8,7 +8,7 @@ class TestMDP(TestCase):
 
     def test_computeEU(self):
         m = mdp.MDP(mapfile='rnGraph')
-        print(m.computeEU("3"))
+        print(m.computeEU("3")[0])
 
     def test_computePolicy(self):
         m = mdp.MDP(mapfile='rnGraph')
