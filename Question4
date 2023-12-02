@@ -1,0 +1,33 @@
+1.How do humans provide feedback to the LLM?
+Humans provide feedback by ranking or comparing different model-generated outputs.
+Specifically, annotators compare generated text from two language models conditioned
+on the same prompt. An Elo system is then used to generate a ranking of the models and
+ outputs relative to each other. This ranking is used as a basis for creating a reward model,
+ which represents human preferences for different text sequences.
+
+2. The article describes how to set up an LLM as a reinforcement learning problem.
+What are the states (or observation space), actions, policy, and reward?
+
+States (Observation Space): The states in RLHF are represented by the input prompts
+given to the language model. These prompts are used to generate text sequences.
+Actions: The actions correspond to the tokens in the vocabulary of the language model.
+ The model can output a sequence of text as its action.
+Policy: The policy is the language model itself, which takes in a prompt and outputs
+a sequence of text or probability distributions over text.
+Reward: The reward is a scalar value representing the human preference for the
+generated text. It is obtained by combining the preference model and a penalty term
+based on the KL divergence between the probability distributions of the RL policy and
+the initial pretrained model.
+
+
+3. Why are there so few RLHF datasets available?
+
+RLHF datasets are limited due to the high cost of gathering human preference data.
+The article mentions that gathering human preference data is expensive because it
+involves direct integration of human workers outside the training loop. Additionally,
+generating well-written human text answering specific prompts is costly, often requiring
+ hiring part-time staff rather than relying on crowdsourcing. The disagreement among
+ human annotators also adds potential variance to the training data without a clear
+ ground truth, further complicating the dataset creation process. The cost and
+ complexity of obtaining high-quality human feedback contribute to the scarcity of RLHF
+  datasets.
